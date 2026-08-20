@@ -3,7 +3,6 @@ import type { ChangeEvent, KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Avatar from "../components/ui/Avatar";
-import Button from "../components/ui/Button";
 import RichTextEditor from "../components/compose/RichTextEditor";
 import SchedulePopover from "../components/compose/SchedulePopover";
 
