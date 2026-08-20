@@ -81,15 +81,16 @@ router.post("/google", async (req, res) => {
     });
 
   } catch (error) {
-    console.error(
-      "Google authentication failed:",
-      error
-    );
+  console.error("Google authentication failed:", error);
 
-    return res.status(401).json({
-      message: "Invalid Google credential",
-    });
+  if (error instanceof Error) {
+    console.error("Google error message:", error.message);
   }
+
+  return res.status(401).json({
+    message: "Invalid Google credential",
+  });
+}
 });
 
 export default router;
