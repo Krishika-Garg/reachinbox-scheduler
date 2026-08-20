@@ -1,9 +1,10 @@
 import "dotenv/config";
 import { Queue } from "bullmq";
 
+const redisUrl = process.env.REDIS_URL || "redis://localhost:6379";
+
 export const emailQueue = new Queue("email-queue", {
   connection: {
-    host: process.env.REDIS_HOST || "localhost",
-    port: Number(process.env.REDIS_PORT) || 6379,
+    url: redisUrl,
   },
 });

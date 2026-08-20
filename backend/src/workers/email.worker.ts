@@ -5,10 +5,8 @@ import { sendEmail } from "../services/mail.service.js";
 import { reserveSendSlot } from "../services/rate-limit.service.js";
 
 const redisConnection = {
-  host: process.env.REDIS_HOST || "localhost",
-  port: Number(process.env.REDIS_PORT) || 6379,
+  url: process.env.REDIS_URL || "redis://localhost:6379",
 };
-
 /*
  * Queue instance used to create delayed retry jobs.
  */
