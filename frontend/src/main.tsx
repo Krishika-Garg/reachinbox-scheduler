@@ -13,6 +13,7 @@ createRoot(
 ).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={clientId}>
+      console.log("Google Client ID:", clientId);
       <App />
     </GoogleOAuthProvider>
   </StrictMode>
